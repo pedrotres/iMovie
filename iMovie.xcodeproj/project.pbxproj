@@ -15,6 +15,7 @@
 		BB4B73B3280655A5003748B8 /* iMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B73B2280655A5003748B8 /* iMovieTests.swift */; };
 		BB4B73BD280655A5003748B8 /* iMovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B73BC280655A5003748B8 /* iMovieUITests.swift */; };
 		BB4B73BF280655A5003748B8 /* iMovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B73BE280655A5003748B8 /* iMovieUITestsLaunchTests.swift */; };
+		BBC7B1AB2806E28500CB1787 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1AA2806E28500CB1787 /* UIViewPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BB4B73B8280655A5003748B8 /* iMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B73BC280655A5003748B8 /* iMovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMovieUITests.swift; sourceTree = "<group>"; };
 		BB4B73BE280655A5003748B8 /* iMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BBC7B1AA2806E28500CB1787 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,10 @@
 		BB4B739A280655A2003748B8 /* iMovie */ = {
 			isa = PBXGroup;
 			children = (
-				BB4B739B280655A2003748B8 /* AppDelegate.swift */,
-				BB4B739D280655A2003748B8 /* SceneDelegate.swift */,
-				BB4B739F280655A2003748B8 /* ViewController.swift */,
-				BB4B73A4280655A5003748B8 /* Assets.xcassets */,
-				BB4B73A6280655A5003748B8 /* LaunchScreen.storyboard */,
-				BB4B73A9280655A5003748B8 /* Info.plist */,
+				BBC7B1A62806E14900CB1787 /* AppDelegate */,
+				BBC7B1A72806E17C00CB1787 /* Resources */,
+				BBC7B1A92806E23C00CB1787 /* Screens */,
+				BBC7B1A82806E21D00CB1787 /* Utils */,
 			);
 			path = iMovie;
 			sourceTree = "<group>";
@@ -122,6 +122,41 @@
 				BB4B73BE280655A5003748B8 /* iMovieUITestsLaunchTests.swift */,
 			);
 			path = iMovieUITests;
+			sourceTree = "<group>";
+		};
+		BBC7B1A62806E14900CB1787 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BB4B739B280655A2003748B8 /* AppDelegate.swift */,
+				BB4B739D280655A2003748B8 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BBC7B1A72806E17C00CB1787 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB4B73A4280655A5003748B8 /* Assets.xcassets */,
+				BB4B73A9280655A5003748B8 /* Info.plist */,
+				BB4B73A6280655A5003748B8 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBC7B1A82806E21D00CB1787 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BBC7B1AA2806E28500CB1787 /* UIViewPreview.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BBC7B1A92806E23C00CB1787 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BB4B739F280655A2003748B8 /* ViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4B73A0280655A2003748B8 /* ViewController.swift in Sources */,
+				BBC7B1AB2806E28500CB1787 /* UIViewPreview.swift in Sources */,
 				BB4B739C280655A2003748B8 /* AppDelegate.swift in Sources */,
 				BB4B739E280655A2003748B8 /* SceneDelegate.swift in Sources */,
 			);
