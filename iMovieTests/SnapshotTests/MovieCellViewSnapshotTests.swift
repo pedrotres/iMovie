@@ -12,7 +12,7 @@ import SnapshotTesting
 class MovieCellViewSnapshotTests: XCTestCase {
 
    let size = CGSize(width: 400, height: 150)
-   let isRecod = true
+   let isRecod = false
     
     func test_movieCellView_whenSnapshot_shouldSuccess () {
         let configuration = MovieCellViewConfiguration(name: "Spider-Man: No Way Home", year: "2022", star: "8.7", icon: "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
