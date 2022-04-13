@@ -18,6 +18,7 @@
 		BBC7B1AB2806E28500CB1787 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1AA2806E28500CB1787 /* UIViewPreview.swift */; };
 		BBC7B1AE2806E3FF00CB1787 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1AD2806E3FF00CB1787 /* Movie.swift */; };
 		BBC7B1B12806E6B600CB1787 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1B02806E6B600CB1787 /* MovieService.swift */; };
+		BBC7B1B5280740B100CB1787 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1B4280740B100CB1787 /* MovieCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BBC7B1AA2806E28500CB1787 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		BBC7B1AD2806E3FF00CB1787 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		BBC7B1B02806E6B600CB1787 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		BBC7B1B4280740B100CB1787 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4B739A280655A2003748B8 /* iMovie */,
-				BB4B73A9280655A5003748B8 /* Info.plist */,
 				BB4B73B1280655A5003748B8 /* iMovieTests */,
 				BB4B73BB280655A5003748B8 /* iMovieUITests */,
 				BB4B7399280655A2003748B8 /* Products */,
@@ -143,6 +144,7 @@
 		BBC7B1A72806E17C00CB1787 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB4B73A9280655A5003748B8 /* Info.plist */,
 				BB4B73A4280655A5003748B8 /* Assets.xcassets */,
 				BB4B73A6280655A5003748B8 /* LaunchScreen.storyboard */,
 			);
@@ -160,6 +162,8 @@
 		BBC7B1A92806E23C00CB1787 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BBC7B1B228073A1F00CB1787 /* Components */,
+				BBC7B1B328073A3900CB1787 /* List */,
 				BB4B739F280655A2003748B8 /* ViewController.swift */,
 			);
 			path = Screens;
@@ -179,6 +183,21 @@
 				BBC7B1B02806E6B600CB1787 /* MovieService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BBC7B1B228073A1F00CB1787 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BBC7B1B4280740B100CB1787 /* MovieCellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BBC7B1B328073A3900CB1787 /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +334,7 @@
 				BB4B73A0280655A2003748B8 /* ViewController.swift in Sources */,
 				BBC7B1AB2806E28500CB1787 /* UIViewPreview.swift in Sources */,
 				BB4B739C280655A2003748B8 /* AppDelegate.swift in Sources */,
+				BBC7B1B5280740B100CB1787 /* MovieCellView.swift in Sources */,
 				BB4B739E280655A2003748B8 /* SceneDelegate.swift in Sources */,
 				BBC7B1AE2806E3FF00CB1787 /* Movie.swift in Sources */,
 			);
@@ -486,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iMovie/Info.plist;
+				INFOPLIST_FILE = iMovie/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -512,7 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iMovie/Info.plist;
+				INFOPLIST_FILE = iMovie/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
