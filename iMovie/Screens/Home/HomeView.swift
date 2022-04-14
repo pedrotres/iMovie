@@ -10,7 +10,7 @@ import UIKit
 final class HomeView: UIView {
     private let homeCellViewIdentifier = "HomeCellViewIdentifier"
     
-    private var movies: [Movie] = []
+    private var movies: Movie = Movie.init(home: Home(results: []))
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -30,7 +30,7 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView(with movies: [Movie]){
+    func updateView(with movies: Movie){
         self.movies = movies
         self.tableView.reloadData()
     }
@@ -59,32 +59,19 @@ private extension HomeView {
 extension HomeView: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if self.movies.isEmpty {
-            return 1
-        }else {
-            return self.movies[0].home.results.count
-        }
-     
+            return self.movies.home.results.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if !self.movies.isEmpty {
-            
-            let movie = movies[0].home.results[indexPath.row]
+            let movie = movies.home.results[indexPath.row]
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCellView.cellIdentifier, for: indexPath) as? MovieCellView else {
                 return .init()
             }
-            let configuration = MovieCellViewConfiguration(name: movie.originalTitle, year: movie.releaseDate, star: String(format: "%f", movie.voteAverage), icon: movie.posterPath)
+            let configuration = MovieCellViewConfiguration(name: movie.originalTitle, year: movie.releaseDate, star: String(format: "%.1f", movie.voteAverage), icon: movie.posterPath)
             cell.updateView(with: configuration)
             
             return cell
-            
-        }
-        
-        return MovieCellView()
     }
     
 }
