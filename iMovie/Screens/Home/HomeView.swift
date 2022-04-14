@@ -21,6 +21,14 @@ final class HomeView: UIView {
         return tableView
     }()
     
+    private lazy var loadingView: LoadingView = {
+        let loadingView = LoadingView()
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.setLoadingMessage("Loading movies")
+        loadingView.isHidden = true
+        return loadingView
+    }()
+    
     init(){
         super.init(frame: .zero)
         self.setupViews()
@@ -34,16 +42,22 @@ final class HomeView: UIView {
         self.movies = movies
         self.tableView.reloadData()
     }
+    
+    func updateLoading(with isLoading: Bool){
+        loadingView.updateLoading(isLoading)
+    }
 }
 private extension HomeView {
     func setupViews(){
         self.backgroundColor = .black
         self.configureSubViews()
         self.configureTableViewConstraints()
+        self.configureLoadingViewConstraints()
     }
     
     func configureSubViews(){
         self.addSubview(tableView)
+        self.addSubview(loadingView)
     }
     
     func configureTableViewConstraints() {
@@ -54,24 +68,33 @@ private extension HomeView {
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    func configureLoadingViewConstraints() {
+        NSLayoutConstraint.activate([
+            self.loadingView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            self.loadingView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
 }
 
 extension HomeView: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.movies.home.results.count
+        return self.movies.home.results.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let movie = movies.home.results[indexPath.row]
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCellView.cellIdentifier, for: indexPath) as? MovieCellView else {
-                return .init()
-            }
-            let configuration = MovieCellViewConfiguration(name: movie.originalTitle, year: movie.releaseDate, star: String(format: "%.1f", movie.voteAverage), icon: movie.posterPath)
-            cell.updateView(with: configuration)
-            
-            return cell
+        let movie = movies.home.results[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCellView.cellIdentifier, for: indexPath) as? MovieCellView else {
+            return .init()
+        }
+        let configuration = MovieCellViewConfiguration(name: movie.originalTitle, year: movie.releaseDate, star: String(format: "%.1f", movie.voteAverage), icon: movie.posterPath)
+        cell.updateView(with: configuration)
+        
+        return cell
     }
     
 }

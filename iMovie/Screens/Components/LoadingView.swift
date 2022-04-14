@@ -10,7 +10,7 @@ import UIKit
 final class LoadingView: UIView {
     
     private let shouldAnimate: Bool
-        
+    
     private lazy var loadingContainer: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +32,6 @@ final class LoadingView: UIView {
     private lazy var loadingMessage: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Loading..."
         label.isHidden = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -40,7 +39,7 @@ final class LoadingView: UIView {
         label.textColor = .white
         return label
     }()
-        
+    
     init(shouldAnimate: Bool = true) {
         self.shouldAnimate = shouldAnimate
         super.init(frame: .zero)
@@ -95,16 +94,3 @@ private extension LoadingView {
         ])
     }
 }
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
-struct LoadingViewPreview: PreviewProvider {
-    static var previews: some View {
-        UIViewPreview {
-            let restaurantCellView = LoadingView()
-            return restaurantCellView
-        }
-    }
-}
-#endif

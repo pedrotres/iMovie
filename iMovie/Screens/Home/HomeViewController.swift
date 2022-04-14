@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        homeView.updateLoading(with: true)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "iMovie App"
                 
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.homeView.updateView(with: movies)
+                self.homeView.updateLoading(with: false)
             }
         }
     }
