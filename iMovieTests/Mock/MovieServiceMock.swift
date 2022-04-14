@@ -40,8 +40,7 @@ class MovieServiceMock: MovieServiceProtocol {
             let movies = try decoder.decode(Movie.self, from: data)
             return movies
         } catch  {
-            print("error decoder \(error)")
-            print("teste")
+            print("error \(error)")
             return nil
         }
     }

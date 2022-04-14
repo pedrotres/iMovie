@@ -8,11 +8,11 @@
 import Foundation
 
 protocol MovieServiceProtocol {
-    func fetchMovies (_ completion: @escaping ([Movie]?) -> Void)
+    func fetchMovies (_ completion: @escaping (Movie?) -> Void)
 }
 
 struct MovieService: MovieServiceProtocol {
-    func fetchMovies(_ completion: @escaping ([Movie]?) -> Void) {
+    func fetchMovies(_ completion: @escaping (Movie?) -> Void) {
         
         let url = URL(string: "https://webservice-movies.herokuapp.com/movies")!
         
@@ -30,10 +30,10 @@ struct MovieService: MovieServiceProtocol {
             
             do {
                 let decoder = JSONDecoder()
-                let movies = try decoder.decode([Movie].self, from: data)
+                let movies = try decoder.decode(Movie.self, from: data)
                 completion(movies)
             } catch {
-                print(error.localizedDescription)
+                print("error \(error.localizedDescription)")
                 completion(nil)
             }
         }
