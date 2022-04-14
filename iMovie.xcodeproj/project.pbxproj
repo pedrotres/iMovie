@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		883C6F6CBCB01025EA3B1A54 /* Pods_iMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49936EE53006B7D569658A0B /* Pods_iMovie.framework */; };
+		BB3F6A9F280839F50050A108 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F6A9E280839F50050A108 /* HomeViewController.swift */; };
 		BB4B739C280655A2003748B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B739B280655A2003748B8 /* AppDelegate.swift */; };
 		BB4B739E280655A2003748B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B739D280655A2003748B8 /* SceneDelegate.swift */; };
 		BB4B73A0280655A2003748B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B739F280655A2003748B8 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		BBC7B1B12806E6B600CB1787 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1B02806E6B600CB1787 /* MovieService.swift */; };
 		BBC7B1B5280740B100CB1787 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B1B4280740B100CB1787 /* MovieCellView.swift */; };
 		BBE886CC28077E550033171A /* MovieCellViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE886CB28077E550033171A /* MovieCellViewSnapshotTests.swift */; };
+		BBE886D22807863D0033171A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE886D12807863D0033171A /* HomeView.swift */; };
 		EB451E7B71387E49F3812CE5 /* Pods_iMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B50DCBBDBFC19BDF96426CA /* Pods_iMovieTests.framework */; };
 		F8A28D5F124B90D17DB71B14 /* Pods_iMovie_iMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170BF59DC4DB92883AB383F3 /* Pods_iMovie_iMovieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,7 @@
 		81AFE657EB9B30ED09B96724 /* Pods-iMovie-iMovieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovie-iMovieUITests.debug.xcconfig"; path = "Target Support Files/Pods-iMovie-iMovieUITests/Pods-iMovie-iMovieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B37FBD7F9B0A2C8D8FA650CE /* Pods-iMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovieTests.release.xcconfig"; path = "Target Support Files/Pods-iMovieTests/Pods-iMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CFA1BFE76C39E06B0B23B1 /* Pods-iMovieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovieTests.debug.xcconfig"; path = "Target Support Files/Pods-iMovieTests/Pods-iMovieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3F6A9E280839F50050A108 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB4B7398280655A2003748B8 /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B739B280655A2003748B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4B739D280655A2003748B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		BBC7B1B02806E6B600CB1787 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		BBC7B1B4280740B100CB1787 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 		BBE886CB28077E550033171A /* MovieCellViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewSnapshotTests.swift; sourceTree = "<group>"; };
+		BBE886D12807863D0033171A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +209,8 @@
 		BBC7B1A92806E23C00CB1787 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BBE886CE280786030033171A /* Home */,
 				BBC7B1B228073A1F00CB1787 /* Components */,
-				BBC7B1B328073A3900CB1787 /* List */,
 				BB4B739F280655A2003748B8 /* ViewController.swift */,
 			);
 			path = Screens;
@@ -236,19 +240,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		BBC7B1B328073A3900CB1787 /* List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
 		BBE886C928077E230033171A /* SnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
 				BBE886CB28077E550033171A /* MovieCellViewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		BBE886CE280786030033171A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BBE886D12807863D0033171A /* HomeView.swift */,
+				BB3F6A9E280839F50050A108 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +482,8 @@
 				BBC7B1AB2806E28500CB1787 /* UIViewPreview.swift in Sources */,
 				BB4B739C280655A2003748B8 /* AppDelegate.swift in Sources */,
 				BBC7B1B5280740B100CB1787 /* MovieCellView.swift in Sources */,
+				BB3F6A9F280839F50050A108 /* HomeViewController.swift in Sources */,
+				BBE886D22807863D0033171A /* HomeView.swift in Sources */,
 				BB4B739E280655A2003748B8 /* SceneDelegate.swift in Sources */,
 				BBC7B1AE2806E3FF00CB1787 /* Movie.swift in Sources */,
 			);

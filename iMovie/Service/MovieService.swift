@@ -12,31 +12,29 @@ protocol MovieServiceProtocol {
 }
 
 struct MovieService: MovieServiceProtocol {
-    
     func fetchMovies(_ completion: @escaping ([Movie]?) -> Void) {
-        let url = URL(string:"https://webservice-movies.herokuapp.com/movies")!
-        self.request(url, completion: completion)
-    }
-    
-    func request<T: Decodable>(_ url: URL, completion: @escaping (T?) -> Void){
-        let dataTask = URLSession.shared.dataTask(with: url){ data, response, error in
+        
+        let url = URL(string: "https://webservice-movies.herokuapp.com/movies")!
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             
-            if let _ = error{
+            guard error == nil else {
                 completion(nil)
                 return
             }
             
-            if let data = data {
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            
+            do {
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-                do{
-                    let repo = try decoder.decode(T.self, from: data)
-                    completion(repo)
-                }catch{
-                    print(error)
-                    completion(nil)
-                }
+                let movies = try decoder.decode([Movie].self, from: data)
+                completion(movies)
+            } catch {
+                print(error.localizedDescription)
+                completion(nil)
             }
         }
         dataTask.resume()

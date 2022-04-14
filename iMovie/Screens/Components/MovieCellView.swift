@@ -103,7 +103,7 @@ final class MovieCellView: UITableViewCell {
         addSubview(iconImageView)
         addSubview(nameLabel)
         addSubview(yearLabel)
-        //addSubview(starLabel)
+        addSubview(starLabel)
         addSubview(iconStarView)
     }
 }
