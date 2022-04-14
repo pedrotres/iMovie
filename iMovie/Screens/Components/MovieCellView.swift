@@ -169,7 +169,7 @@ extension MovieCellView {
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-struct RestaurantCellViewPreview: PreviewProvider {
+struct MovieCellViewPreview: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
             let configuration = MovieCellViewConfiguration(name: "Spider-Man: No Way Home", year: "2022", star: "8.7", icon: "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
