@@ -67,7 +67,7 @@ final class MovieCellView: UITableViewCell {
     
     func updateView(with configuration: MovieCellViewConfiguration){
         nameLabel.text = configuration.name
-        yearLabel.text = configuration.year
+        yearLabel.text = configuration.year.returnYear()
         starLabel.text = configuration.star
         
         let path = URL(string: "https://image.tmdb.org/t/p/w220_and_h330_face\(configuration.icon)")
