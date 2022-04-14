@@ -36,6 +36,38 @@ class MovieServiceTests: XCTestCase {
         XCTAssertNotNil(resultExpected)
         XCTAssertEqual(resultExpected?.home.results[0].originalTitle, "Spider-Man: No Way Home")
     }
+    
+    func test_fetchMovies_withoutData_shouldCallWithError() {
+        sut.errorAPI = .noData
+        var resultExpected: Movie?
+
+        sut.fetchMovies { homeData in
+
+            guard let result = homeData else {
+                return
+            }
+
+            resultExpected = result
+        }
+
+        XCTAssertNil(resultExpected)
+    }
+    
+    func test_fetchMovies_withParseError_shouldCallWithError() {
+        sut.errorAPI = .parseError
+        var resultExpected: Movie?
+
+        sut.fetchMovies { homeData in
+
+            guard let result = homeData else {
+                return
+            }
+
+            resultExpected = result
+        }
+
+        XCTAssertNil(resultExpected)
+    }
 }
 
 
